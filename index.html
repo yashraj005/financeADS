@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INR Financial Tracking Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Financial Tracking Dashboard (INR)</h1>
+    </header>
+
+    <!-- Monthly Income Input Section -->
+    <section id="monthlyIncomeSection">
+        <h2>Enter Your Monthly Income</h2>
+        <form id="monthlyIncomeForm">
+            <input type="number" id="monthlyIncome" placeholder="Enter your monthly income in INR" required>
+            <button type="submit">Submit Income</button>
+        </form>
+    </section>
+
+    <main>
+        <!-- Overview Section -->
+        <section id="overview">
+            <h2>Overview</h2>
+            <div id="summary">
+                <p>Annual Income: ₹<span id="annualIncome">0</span></p>
+                <p>Total Expenses: ₹<span id="totalExpenses">0</span></p>
+                <p>Tax (Estimated): ₹<span id="tax">0</span></p>
+                <p>Savings after Tax & Expenses: ₹<span id="netSavings">0</span></p>
+            </div>
+        </section>
+
+        <!-- Expense and Income Tracking -->
+        <section id="expenseTracking">
+            <h2>Expense & Income Tracking</h2>
+            <form id="transactionForm">
+                <input type="text" id="description" placeholder="Enter description (e.g., Salary, Grocery)" required>
+                <input type="number" id="amount" placeholder="Enter amount in INR" required>
+                <select id="category">
+                    <option value="Income">Income</option>
+                    <option value="Food">Food</option>
+                    <option value="Rent">Rent</option>
+                    <option value="Utilities">Utilities</option>
+                    <option value="Misc">Miscellaneous</option>
+                </select>
+                <button type="submit">Add Transaction</button>
+            </form>
+            <ul id="transactionsList"></ul>
+        </section>
+
+        <!-- Vehicle Information -->
+        <section id="vehicleInfo">
+            <h2>Do you have a vehicle?</h2>
+            <label>
+                <input type="radio" name="vehicle" value="Yes" id="vehicleYes"> Yes
+            </label>
+            <label>
+                <input type="radio" name="vehicle" value="No" id="vehicleNo" checked> No
+            </label>
+            <div id="vehicleDetails" style="display:none;">
+                <h3>Vehicle Details</h3>
+                <form id="vehicleForm">
+                    <input type="text" id="carName" placeholder="Enter vehicle name (e.g., Honda Accord)" required>
+                    <input type="number" id="carPrice" placeholder="Enter vehicle price in INR" required>
+                    <input type="date" id="purchaseDate" required>
+                    <input type="date" id="insuranceExpiry" required>
+                    <button type="submit">Save Vehicle Info</button>
+                </form>
+                <p id="insuranceTimeLeft"></p>
+            </div>
+        </section>
+        
+        <!-- Budgeting Tool -->
+        <section id="budgetTool">
+            <h2>Budgeting Tool</h2>
+            <form id="budgetForm">
+                <input type="number" id="budgetAmount" placeholder="Set your monthly budget in INR">
+                <button type="submit">Set Budget</button>
+            </form>
+            <p>Budget: ₹<span id="budgetDisplay">0</span></p>
+            <p>Spent: ₹<span id="spentDisplay">0</span></p>
+        </section>
+
+        <!-- Chart Section -->
+        <section id="chartSection">
+            <h2>Financial Trends</h2>
+            <canvas id="financialChart" width="400" height="200"></canvas>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
