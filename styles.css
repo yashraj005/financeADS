@@ -1,61 +1,134 @@
+/* Base Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 20px;
-    background-color: #f4f4f4;
+    padding: 0;
+    background-color: #f5f5f5;
 }
 
 header {
-    background: #35424a;
-    color: #ffffff;
-    padding: 10px 0;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
     text-align: center;
 }
 
-section {
-    background: #ffffff;
-    border-radius: 5px;
+h1, h2 {
+    margin: 0;
     padding: 15px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-    color: #35424a;
+section {
+    padding: 15px;
+    margin: 10px auto;
+    max-width: 1200px;
 }
 
-input[type="number"],
-input[type="text"],
-input[type="date"],
-select {
-    width: 100%;
+/* Form Section */
+#inputSection, #carDetailsSection {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#inputForm, #carForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#inputForm input, #carForm input, #inputForm button, #carForm button {
     padding: 10px;
-    margin: 10px 0;
+    margin-bottom: 10px;
+    border-radius: 4px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    font-size: 1em;
 }
 
-button {
-    background: #35424a;
-    color: #ffffff;
-    padding: 10px;
+#inputForm button, #carForm button {
+    background-color: #4CAF50;
+    color: white;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
 }
 
-button:hover {
-    background: #5a6a76;
+#inputForm button:hover, #carForm button:hover {
+    background-color: #45a049;
 }
 
-#transactionsList {
-    list-style-type: none;
-    padding: 0;
+/* Overview Section */
+#summary {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
 }
 
-#transactionsList li {
-    background: #eaeaea;
-    margin: 5px 0;
-    padding: 10px;
-    border-radius: 4px;
+#summary p {
+    font-size: 1.2em;
+    margin: 10px;
+}
+
+/* Chart Section */
+#chartSection {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Tax Countdown Section */
+#taxCountdownSection {
+    background-color: #ffeb3b;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Display Car Details */
+#carDisplaySection {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+    h1, h2 {
+        font-size: 1.5em;
+        padding: 10px;
+    }
+
+    #inputForm input, #inputForm button, #carForm input, #carForm button {
+        font-size: 1em;
+    }
+
+    #summary p {
+        font-size: 1.1em;
+    }
+
+    #chartSection {
+        padding: 10px;
+    }
+}
+
+/* Mobile-Specific Styles */
+@media only screen and (max-width: 480px) {
+    h1, h2 {
+        font-size: 1.2em;
+    }
+
+    #summary p {
+        font-size: 1em;
+    }
+
+    #inputForm input, #inputForm button, #carForm input, #carForm button {
+        font-size: 0.9em;
+    }
+
+    canvas {
+        width: 100% !important;
+        height: auto !important;
+    }
 }
